@@ -1,0 +1,30 @@
+<section id="education" class="py-40">
+  <div class="mx-auto max-w-6xl">
+    <div class="mb-32 max-w-lg shrink-0">
+      <h2 class="text-default mb-5 text-6xl font-medium">Skills</h2>
+      <p
+        class="text-default/70 font-body max-w-md text-xl leading-relaxed tracking-normal">
+        This are the skills that ive learned and used to build website or web
+        app.
+      </p>
+    </div>
+    <!-- <div class="">
+      <ul class="grid grid-cols-4 gap-4">
+        <li *ngFor="let skill of skills">
+          <div
+            class="border-primary-dark/10 h-full w-full rounded-2xl border-2 p-10 text-center">
+            <div class="bg-primary-dark mx-auto h-20 w-20 rounded-full"></div>
+            <h3 class="text-default my-4 text-2xl font-medium">
+              {{ skill.name }}
+            </h3>
+            <p
+              class="text-default/70 font-body leading-relaxed tracking-normal">
+              {{ skill.description }}
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div> -->
+    <app-skill-item-list [skills]="skills" />
+  </div>
+</section>

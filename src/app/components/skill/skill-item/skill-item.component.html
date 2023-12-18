@@ -1,0 +1,14 @@
+<div
+  class="skill-item absolute grid h-28 w-28 cursor-pointer place-items-center rounded-full hover:opacity-90"
+  [class]="
+    isActive ? 'border-primary-dark z-50 border-4 border-dashed' : 'opacity-50'
+  ">
+  <!-- <div class="h-2 w-2 rounded-full bg-blue-500"></div> -->
+  <div
+    class="bg-primary-dark/90 hover:bg-primary-dark absolute grid h-24 w-24 place-items-center rounded-full">
+    <img
+      class="w-12"
+      src="{{ 'assets/icons/' + skill?.name?.toLowerCase() + '.svg' }}"
+      alt="{{ skill?.name }}" />
+  </div>
+</div>

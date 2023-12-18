@@ -1,0 +1,82 @@
+<section id="experience" class="py-32">
+  <div class="mx-auto max-w-6xl">
+    <h2 class="text-default mx-auto mb-20 text-center text-6xl font-medium">
+      My Work Experience
+    </h2>
+    <ul class="pl-96">
+      <li
+        *ngFor="let experience of experiences; let i = index"
+        class="relative pb-12 last:pb-0">
+        <!-- decoration -->
+        <div class="absolute -left-14 top-0.5 h-full w-[30px]">
+          <div
+            class="bg-default border-primary-dark/80 absolute z-10 rounded-full border-2 p-1.5">
+            <div
+              class="h-4 w-4 rounded-full bg-primary"
+              [style.backgroundColor]="listColor[i % 3]"></div>
+          </div>
+
+          <div
+            class="border-primary-dark/80 absolute left-1/2 top-0 h-full w-2 border-l-2 border-dashed"></div>
+        </div>
+
+        <div class="absolute -left-96 top-0 w-60">
+          <p class="text-default mb-6 text-2xl font-medium">
+            {{ experience.company }}
+          </p>
+          <p class="text-default/60 font-body text-sm tracking-normal">
+            {{
+              formatDate(experience.startDate) +
+                ' - ' +
+                formatDate(experience.endDate)
+            }}
+          </p>
+        </div>
+
+        <h3 class="text-default mb-6 text-2xl font-medium">
+          {{ experience.role }}
+        </h3>
+
+        <p
+          class="text-default/70 font-body mb-3 text-lg leading-loose tracking-normal">
+          {{ experience.description }}
+        </p>
+        <ul
+          class="{{
+            'overflow-hidden text-default/90 transition-all ' +
+              (showDetails[i] ? 'max-h-[1000px]' : 'max-h-0')
+          }}">
+          <li *ngFor="let jobDetail of experience.listJobDetail" class="mb-3">
+            <h4 class="mb-2 text-xl font-medium text-accent">
+              {{ jobDetail.name }}
+            </h4>
+            <p
+              class="text-default/70 font-body text-lg leading-loose tracking-normal">
+              {{ jobDetail.description }}
+            </p>
+          </li>
+        </ul>
+        <button
+          class="mt-0 flex items-center font-semibold text-primary"
+          (click)="toggleDetails(i)">
+          <span class="mr-2">
+            {{ showDetails[i] ? 'Less' : 'More' }}
+          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="h-5 w-5 transition-transform"
+            [class.rotate-180]="showDetails[i]">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+</section>

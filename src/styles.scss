@@ -1,4 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h2 {
+  word-spacing: 10px;
+  width: fit-content;
+  position: relative;
+  overflow: visible;
+
+  &::before {
+    position: absolute;
+    content: ' ';
+    width: 40px;
+    height: 8px;
+    background-color: #f26440;
+    bottom: -4px;
+    left: 0;
+  }
+}

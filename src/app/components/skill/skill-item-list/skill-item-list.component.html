@@ -1,0 +1,24 @@
+<div class="flex w-full">
+  <div class="outer-circle shrink-0">
+    <div class="center-circle">
+      <div class="item-container absolute inset-0" #parentEl>
+        <app-skill-item
+          *ngFor="let skill of skills; let i = index"
+          [skill]="skill"
+          [isActive]="i === currActiveSkill"
+          (click)="setSkillActive(i)" />
+      </div>
+    </div>
+  </div>
+  <div class="flex h-[500px] items-center">
+    <div>
+      <p class="mb-5 text-6xl text-primary">
+        {{ skills[currActiveSkill].name }}
+      </p>
+      <p
+        class="font-body text-default/80 text-2xl leading-relaxed tracking-normal">
+        {{ skills[currActiveSkill].description }}
+      </p>
+    </div>
+  </div>
+</div>

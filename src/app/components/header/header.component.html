@@ -1,0 +1,12 @@
+<header class="mx-auto flex max-w-7xl justify-between">
+  <!-- <h1>HATTA CV</h1> -->
+  <nav class="m-4 mx-auto p-4">
+    <ul class="flex gap-x-8">
+      <li *ngFor="let navItem of navigationList">
+        <a class="text-default/60" [href]="'#' + navItem.sectionId">{{
+          navItem.label
+        }}</a>
+      </li>
+    </ul>
+  </nav>
+</header>
